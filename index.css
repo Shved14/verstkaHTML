@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+}
+
+.sidebar {
+    width: 250px;
+    background: white;
+    border-right: 1px solid #e0e0e0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.logo-icon {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(to top right, #f43f5e, #3b82f6);
+    transform: rotate(45deg);
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-weight: bold;
+    color: #1e3a8a;
+    font-size: 18px;
+    transition: opacity 0.3s, width 0.3s;
+    white-space: nowrap;
+}
+
+.sidebar.collapsed .logo-text {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.toggle-btn {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    color: #555;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+}
+
+.menu li:hover {
+    background: #f0f8ff;
+}
+
+.menu li.active {
+    background: #e0edff;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.menu li i {
+    min-width: 20px;
+}
+
+.menu li span {
+    transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .menu li span {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.notification .dot {
+    position: absolute;
+    right: 20px;
+    width: 8px;
+    height: 8px;
+    background: red;
+    border-radius: 50%;
+}
+
+.bottom {
+    border-top: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+.bottom-menu {
+    margin-bottom: 20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    transition: all 0.3s;
+}
+
+.user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 12px;
+    color: #666;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d4ed8;
+}
+
+.sidebar.collapsed .user-info {
+    display: none;
+}
+
+.sidebar.collapsed .user {
+    justify-content: center;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1e293b;
+    --accent: #2563eb;
+    --hover-bg: #f0f8ff;
+    --active-bg: #e0edff;
+    --border-color: #e0e0e0;
+    --user-name-color: #1d4ed8;
+}
+
+body.dark {
+    --bg-color: #1e293b;
+    --text-color: #f1f5f9;
+    --accent: #60a5fa;
+    --hover-bg: #334155;
+    --active-bg: #475569;
+    --border-color: #334155;
+    --user-name-color: #93c5fd;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.sidebar {
+    background: var(--bg-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.menu li {
+    color: var(--text-color);
+}
+
+.menu li.active {
+    background: var(--active-bg);
+    color: var(--accent);
+}
+
+.menu li:hover {
+    background: var(--hover-bg);
+}
+
+.user-info .name {
+    color: var(--user-name-color);
+}
+
+.bottom {
+    border-top: 1px solid var(--border-color);
+}
+
+.theme-toggle {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+#themeToggle {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+
+.theme-toggle-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+.theme-toggle-button:hover {
+    background: #1d4ed8;
+}

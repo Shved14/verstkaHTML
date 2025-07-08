@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Technifly Sidebar</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="top">
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <span class="logo-text">Technifly</span>
+            <button class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-angle-left"></i>
+            </button>
+        </div>
+
+        <ul class="menu">
+            <li class="active"><i class="fas fa-chart-line"></i><span>Sales</span></li>
+            <li><i class="fas fa-money-bill-wave"></i><span>Costs</span></li>
+            <li><i class="fas fa-credit-card"></i><span>Payments</span></li>
+            <li><i class="fas fa-piggy-bank"></i><span>Finances</span></li>
+            <li class="notification">
+                <i class="fas fa-envelope"></i>
+                <span>Messages</span>
+                <span class="dot"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="bottom">
+        <ul class="menu bottom-menu">
+            <li><i class="fas fa-cog"></i><span>Settings</span></li>
+            <li><i class="fas fa-question-circle"></i><span>Support</span></li>
+        </ul>
+
+        <div class="user collapsed-center">
+            <img src="https://i.imgur.com/Gu5Cznz.jpg" alt="User Avatar">
+            <div class="user-info">
+                <span class="label">User Account</span>
+                <span class="name">Mark T.</span>
+            </div>
+        </div>
+    </div>
+</div>
+<button id="themeToggle" class="theme-toggle-button">
+    <i class="fas fa-moon"></i>
+</button>
+
+<script>
+    function toggleSidebar() {
+        document.querySelector(".sidebar").classList.toggle("collapsed");
+    }
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
